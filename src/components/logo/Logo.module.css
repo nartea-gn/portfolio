@@ -1,0 +1,12 @@
+/* Default look: Nartena GN blue and sensible size.
+   Parents can override color/size by passing className. */
+.root {
+  width: 5rem;
+  height: 5rem;
+  display: inline-block;
+}
+
+
+.path {
+  fill: var(--link);  /* siempre azul */
+}

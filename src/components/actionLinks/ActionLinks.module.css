@@ -1,0 +1,104 @@
+/* Container: flex wrap + gap control por data-attribute */
+.container {
+  @apply flex flex-wrap;
+  gap: 1rem; /* fallback (md) */
+}
+
+/* Gap numeric variants */
+.container[data-gap="1"] {
+  gap: 0.25rem;
+}
+.container[data-gap="2"] {
+  gap: 0.5rem;
+}
+.container[data-gap="3"] {
+  gap: 0.75rem;
+}
+.container[data-gap="4"] {
+  gap: 1rem;
+}
+.container[data-gap="5"] {
+  gap: 1.25rem;
+}
+.container[data-gap="6"] {
+  gap: 1.5rem;
+}
+
+/* Item base */
+.item {
+  @apply inline-flex items-center gap-2 font-medium transition;
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+
+  /* Tokens dark-only */
+  --_focus-color: var(--link);
+  --_focus-offset-bg: var(--bg-canvas);
+  --tw-ring-color: var(--_focus-color);
+  --tw-ring-offset-color: var(--_focus-offset-bg);
+
+  color: var(--text-primary);
+}
+
+/* Sizes */
+.size--sm {
+  @apply px-3 py-1.5 text-sm;
+}
+.size--md {
+  @apply px-4 py-2 text-sm;
+}
+
+/* Rounded */
+.rounded--md {
+  @apply rounded-md;
+}
+.rounded--xl {
+  @apply rounded-xl;
+}
+.rounded--2xl {
+  @apply rounded-2xl;
+}
+.rounded--full {
+  @apply rounded-full;
+}
+
+/* Variants */
+.variant--primary {
+  @apply ring-1;
+  --tw-ring-color: var(--border);
+  color: var(--link)
+}
+.variant--primary:hover {
+  --tw-ring-color: var(--text-secondary);
+}
+
+.variant--secondary {
+  @apply ring-1;
+  --tw-ring-color: var(--border);
+  opacity: 0.9;
+  color: var(--link)
+}
+.variant--secondary:hover {
+  opacity: 1;
+}
+
+.variant--accent {
+  background: var(--link);
+  color: var(--text-primary);
+}
+.variant--accent:hover {
+  opacity: 0.9;
+}
+
+.variant--ghost:hover {
+  background: var(--bg-subtle);
+  box-shadow: var(--shadow);
+}
+
+/* Label */
+.label {
+  color: var(--text-primary);
+}
+
+/* List semantics */
+.listItem {
+  list-style: none;
+}

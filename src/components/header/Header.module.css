@@ -1,0 +1,31 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: box-shadow 200ms ease, background 200ms ease;
+  backdrop-filter: saturate(180%) blur(6px);
+}
+
+.headerScrolled {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(80vw, 320px);
+  height: 100dvh;
+  background: var(--bg-canvas);
+  border-left: 1px solid var(--border);
+  transform: translateX(100%);
+  transition: transform 220ms ease;
+  z-index: 70;
+  padding: 18px;
+  gap: 10px;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+  box-shadow: var(--shadow);
+}

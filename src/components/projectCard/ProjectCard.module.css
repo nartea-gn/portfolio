@@ -1,0 +1,90 @@
+.card {
+  transition: transform 180ms ease, box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ===== Variant A: classic (media on top, text below) ===== */
+.cardA {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.cardA .media {
+  height: 10rem;
+  width: 100%;
+  object-fit: scale-down;
+}
+.cardA .fallbackBox {
+  height: 16rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-canvas);
+}
+
+/* ===== Variant B: compact row (media left, text right) ===== */
+.cardB {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.cardB .media {
+  height: 16rem;
+  width: 100%;
+  object-fit: scale-down;
+}
+.cardB .fallbackBox {
+  height: 16rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-canvas);
+}
+
+/* Shared content area */
+.body {
+  padding: 1rem;
+}
+.title {
+  font-weight: 600;
+  text-align: center;
+}
+.desc {
+  margin-top: 0.25rem;
+  opacity: 0.8;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Make text left-aligned in B (more list-like) */
+.cardB .title,
+.cardB .desc {
+  text-align: center;
+}
+
+/* Small radius on inner media when B */
+.cardB .media,
+.cardB .fallbackBox {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Responsive tweak: on small screens keep A stacked look */
+@media (max-width: 640px) {
+  .cardB {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .cardB .media,
+  .cardB .fallbackBox {
+    height: 10rem;
+  }
+  .cardB .title,
+  .cardB .desc {
+    text-align: center;
+  }
+}

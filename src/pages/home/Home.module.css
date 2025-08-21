@@ -1,0 +1,26 @@
+.hero {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 7%, transparent),
+    transparent 60%
+  );
+}
+
+.card {
+  transition: transform 160ms ease, box-shadow 160ms ease,
+    border-color 160ms ease;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--border) 60%, var(--accent) 40%);
+}
+.img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.75rem 0.75rem 0 0;
+}
