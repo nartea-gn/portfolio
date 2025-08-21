@@ -32,7 +32,7 @@ const LINKS: Readonly<ActionLinkItem[]> = [
     variant: "primary",
   },
   {
-    href: "https://www.linkedin.com/in/tu-usuario",
+    href: "https://www.linkedin.com/in/gergina-nacheva-228b09363",
     label: "LinkedIn",
     aria: "Open LinkedIn profile",
     icon: <Linkedin className="size-4" aria-hidden />,
